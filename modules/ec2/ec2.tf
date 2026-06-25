@@ -1,7 +1,7 @@
 #key-value-pair
 resource "aws_key_pair" "my_key_name" {
   key_name   = "${var.env}-terra-auto-key"
-  public_key = file("../../terra-auto-key.pub")
+  public_key = file("${path.module}/terra-auto-key.pub")
 }
 
 resource "aws_default_vpc" "default" {

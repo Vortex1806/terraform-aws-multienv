@@ -36,6 +36,6 @@ module "dynamodb" {
 
 module "s3" {
     source = "./modules/s3"
-    env = "prod"
-    s3_bucket_count = local.prod.bucket_count
+    env = terraform.workspace
+    s3_bucket_count = local.current.bucket_count
 }
